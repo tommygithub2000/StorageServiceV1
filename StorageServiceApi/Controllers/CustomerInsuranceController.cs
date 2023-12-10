@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using StorageServiceApi.Requests;
+using StorageServiceApi.Responses;
 
 namespace StorageServiceApi.Controller
 {
@@ -11,13 +12,30 @@ namespace StorageServiceApi.Controller
         [HttpGet]
         public async Task<IActionResult> GetCustomerInsuranceAsync([FromHeader] string customerNumber)
         {
-            return BadRequest("Not implemented yet.");
+            var response = new CustomerInsuranceResponse(){
+                Id = 1,
+                CustomerName = "Temp name",
+                CustomerNumber = customerNumber,
+                EmailAddress = "TempEmail",
+                InsuranceName = "Temp Insurance Name",
+                InsuredAmount = "1000000SEK"
+            };
+            return Ok(response);
+           
         }
-        
+
         [HttpPost]
         public async Task<IActionResult> CreateCustomerInsuranceAsync([FromHeader] CreateCustomerInsuranceRequest request)
         {
-            return BadRequest("Not implemented yet.");
+            var response = new CustomerInsuranceResponse(){
+                Id = 1,
+                CustomerName = "Temp name",
+                CustomerNumber = "123456789000",
+                EmailAddress = "TempEmail",
+                InsuranceName = "Temp Insurance Name",
+                InsuredAmount = "1000000SEK"
+            };
+            return Ok(response);
         }
 
     }
