@@ -8,12 +8,13 @@ namespace StorageServiceApi.Controller
     [Route("api/customerinsurances")]
     public class CustomerInsuranceController : ControllerBase
     {
-
+        [HttpGet]
         public async Task<IActionResult> GetCustomerInsuranceAsync([FromHeader] string customerNumber)
         {
             return BadRequest("Not implemented yet.");
         }
-
+        
+        [HttpPost]
         public async Task<IActionResult> CreateCustomerInsuranceAsync([FromHeader] CreateCustomerInsuranceRequest request)
         {
             return BadRequest("Not implemented yet.");
